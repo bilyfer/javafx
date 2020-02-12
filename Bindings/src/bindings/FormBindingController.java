@@ -8,10 +8,16 @@ package bindings;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -25,14 +31,16 @@ public class FormBindingController implements Initializable {
     
     @FXML
     TextField txtNombre;
-
+    
     @FXML
-    TextField txtNombre1;
-
+    TableColumn colNombre;
+    
     @FXML
-    TextField txtNombre2;
+    TableView tableView;
     
     Estudiante estudiante;
+    
+    ObservableList<Estudiante> data;
     
     /**
      * Initializes the controller class.
@@ -41,16 +49,17 @@ public class FormBindingController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {                
         estudiante = new Estudiante();
         
-        txtNombre.textProperty().bindBidirectional(estudiante.nombreProperty());
-        txtNombre2.textProperty().bindBidirectional(estudiante.nombreProperty());
-        txtNombre1.textProperty().bindBidirectional(estudiante.nombreProperty());
-        
-        lblNombre.textProperty().bindBidirectional(estudiante.nombreProperty());
-        
+        colNombre.setCellValueFactory(new PropertyValueFactory("nombre"));
+
+        data = FXCollections.observableArrayList();
+        tableView.setItems(data);
     }    
     
     public void resultado() {
-        System.out.println(estudiante.getNombre());
+        Estudiante nuevoEstudiante = new Estudiante();
+        nuevoEstudiante.setNombre(txtNombre.getText());
+        
+        data.add(nuevoEstudiante);
     }
     
 }

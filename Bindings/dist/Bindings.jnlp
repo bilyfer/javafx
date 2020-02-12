@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Bindings.jar" size="3400" download="eager" />
+    <jar href="Bindings.jar" size="3551" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Bindings" >
     <param name="requiredFXVersion" value="8.0+"/>

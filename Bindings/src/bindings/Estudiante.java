@@ -15,7 +15,7 @@ public class Estudiante {
     private final SimpleStringProperty nombre;
 
     public Estudiante() {
-        nombre = new SimpleStringProperty("Nos vemos mañana");
+        nombre = new SimpleStringProperty();
         
     }
 
