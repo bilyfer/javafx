@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -17,5 +18,7 @@
           <TableColumn fx:id="colNombre" prefWidth="300.0" text="Nombre" />
         </columns>
       </TableView>
+      <ComboBox fx:id="cmbCarrera" layoutX="112.0" layoutY="116.0" prefWidth="150.0" />
+      <Label fx:id="lblCarrera" layoutX="53.0" layoutY="120.0" text="Carrera" />
    </children>
 </AnchorPane>

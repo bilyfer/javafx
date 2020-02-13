@@ -5,6 +5,7 @@
  */
 package bindings;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -13,10 +14,11 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Estudiante {
     private final SimpleStringProperty nombre;
+    private final SimpleObjectProperty carrera;
 
     public Estudiante() {
         nombre = new SimpleStringProperty();
-        
+        carrera = new SimpleObjectProperty();
     }
 
     public String getNombre() {
@@ -29,5 +31,17 @@ public class Estudiante {
     
     public SimpleStringProperty nombreProperty() {
         return nombre;
+    }
+
+    public Carrera getCarrera() {
+        return (Carrera) carrera.get();
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera.set(carrera);
+    }
+    
+    public SimpleObjectProperty carreraProperty(){
+        return carrera;
     }
 }
